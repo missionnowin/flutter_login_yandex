@@ -1,13 +1,13 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_login_yandex (0.0.4):
+  - flutter_login_yandex_updated (0.0.5):
     - Flutter
-    - YandexLoginSDK
-  - YandexLoginSDK (2.1.0)
+    - YandexLoginSDK (~> 3.0.1)
+  - YandexLoginSDK (3.0.2)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_login_yandex (from `.symlinks/plugins/flutter_login_yandex/ios`)
+  - flutter_login_yandex_updated (from `.symlinks/plugins/flutter_login_yandex_updated/ios`)
   - YandexLoginSDK
 
 SPEC REPOS:
@@ -17,13 +17,13 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_login_yandex:
-    :path: ".symlinks/plugins/flutter_login_yandex/ios"
+  flutter_login_yandex_updated:
+    :path: ".symlinks/plugins/flutter_login_yandex_updated/ios"
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_login_yandex: 58db8f188b8fcaeda6baa7935564f24ab7766737
-  YandexLoginSDK: cec22fc509343c519ee31b62b38acc1753a78123
+  flutter_login_yandex_updated: 6faf47222912f55e560164991171ad1679d063ce
+  YandexLoginSDK: ea15fc6d5afc2869a320180b0e33ce55937a9783
 
 PODFILE CHECKSUM: 8edf42fc22f17e4e9e51fa01aa8c23a464bb9764
 

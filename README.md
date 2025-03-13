@@ -1,9 +1,9 @@
 # flutter_login_yandex
-! Originaly by spChief ! </br>
+Originaly by spChief </br>
 Flutter plugin for authorization with Yandex LoginSDK for iOS and Android
 
 ## Getting Started
-1. add flutter_login_yandex to your pubspec.yaml file
+1. Add flutter_login_yandex to your pubspec.yaml file
 2. Register Yandex OAuth application, see [official docs](https://dev-id.docs-viewer.yandex.ru/ru/mobileauthsdk/ios/2.1.0/sdk-ios)
 3. Setup android
 4. Setup ios 

@@ -21,8 +21,8 @@ public class SwiftFlutterLoginYandexPlugin: NSObject, FlutterPlugin {
         let clientId = Bundle.main.object(forInfoDictionaryKey: "YAClientId") as? String
         do {
             try YandexLoginSDK.shared.activate(with: clientId!)
-        } catch {
-           return
+        } catch let error {
+            print("err YandexLoginSDK: \(error.localizedDescription)")
         }
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
@@ -48,10 +48,10 @@ public class SwiftFlutterLoginYandexPlugin: NSObject, FlutterPlugin {
     ) -> Bool {
        do {
           try YandexLoginSDK.shared.handleOpenURL(url)
-          return true
        } catch {
           return false
        }
+       return true
     }
 
     func application(
@@ -61,10 +61,10 @@ public class SwiftFlutterLoginYandexPlugin: NSObject, FlutterPlugin {
     ) -> Bool {
         do {
            try YandexLoginSDK.shared.tryHandleUserActivity(userActivity)
-           return true
         } catch {
            return false
         }
+        return true
     }
 
     private func logIn(result: @escaping FlutterResult) {
@@ -74,11 +74,10 @@ public class SwiftFlutterLoginYandexPlugin: NSObject, FlutterPlugin {
           }
         _loginDelegate.startLogin(result: result)
         do {
-            try YandexLoginSDK.shared.authorize(with: viewController, authorizationStrategy: .default)
+            try YandexLoginSDK.shared.authorize(with: viewController)
         } catch {
             result(nil)
         }
-        YandexLoginSDK.shared.remove(observer: _loginDelegate)
     }
     
     private func logOut(result: @escaping FlutterResult) {
@@ -88,6 +87,7 @@ public class SwiftFlutterLoginYandexPlugin: NSObject, FlutterPlugin {
         } catch {
           result(nil)
         }
+        YandexLoginSDK.shared.remove(observer: _loginDelegate)
     }
 }
 
